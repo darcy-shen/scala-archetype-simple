@@ -14,7 +14,7 @@
 
   <name>Archetype - scala-archetype-simple</name>
   <url>http://github.com/davidB/${project.artifactId}</url>
-  <inceptionYear>2012</inceptionYear>
+  <inceptionYear>2016</inceptionYear>
   <description>The maven-scala-plugin is used for compiling/testing/running/documenting scala code in maven.</description>
 
   <licenses>
