@@ -18,6 +18,17 @@
 
 # Changes:
 
+## 1.8
+
+* update scala to 2.12.3
+* update and clean dependencies
+* update maven plugins
+
+## 1.7
+
+* update to Java 8
+* add maven-assembly-plugin to create an executeable jar file
+
 ## 1.6
 
 * change license for Unlicense to CC0 (always Public Domain)
