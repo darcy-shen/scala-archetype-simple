@@ -4,16 +4,18 @@
   <groupId>${groupId}</groupId>
   <artifactId>${artifactId}</artifactId>
   <version>${version}</version>
-  <name>$name</name>
-  <description>My wonderfull scala app</description>
-  <inceptionYear>2016</inceptionYear>
+  <name>${name}</name>
+  <description>${description}</description>
+  <inceptionYear>2017</inceptionYear>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <encoding>UTF-8</encoding>
-    <scala.version>2.11.8</scala.version>
-    <scala.compat.version>2.11</scala.compat.version>
+    
+    <scala.main.class>${project.groupId}.${project.artifactId}.App</scala.main.class>
+    <scala.version>2.12.3</scala.version>
+    <scala.compat.version>2.12</scala.compat.version>
   </properties>
 
   <dependencies>
@@ -25,27 +27,9 @@
 
     <!-- Test -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.specs2</groupId>
-      <artifactId>specs2-core_${scala.compat.version}</artifactId>
-      <version>2.4.16</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.scalatest</groupId>
       <artifactId>scalatest_${scala.compat.version}</artifactId>
-      <version>2.2.4</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.specs2</groupId>
-      <artifactId>specs2-junit_${scala.compat.version}</artifactId>
-      <version>2.4.16</version>
+      <version>3.0.4</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -58,7 +42,7 @@
         <!-- see http://davidb.github.com/scala-maven-plugin -->
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
-        <version>3.2.2</version>
+        <version>3.3.1</version>
         <executions>
           <execution>
             <goals>
@@ -77,7 +61,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.18.1</version>
+        <version>2.20.1</version>
         <configuration>
           <!-- Tests will be run with scalatest-maven-plugin instead -->
           <skipTests>true</skipTests>
@@ -104,14 +88,14 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.6</version>
+        <version>3.1.0</version>
         <configuration>
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>com.your-package.MainClass</mainClass>
+              <mainClass>${scala.main.class}</mainClass>
             </manifest>
           </archive>
         </configuration>
